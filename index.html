@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cálculo IMC</title>
+</head>
+
+<script>
+    function calcular() {
+        const valorA = document.getElementById("txtVa").value
+        const valorB = document.getElementById("txtVb").value
+        const soma = Number(valorA) / Number((valorB * valorB))
+        document.getElementById(`resultado`).innerHTML = `Seu IMC é: ${soma.toFixed(2)}`
+    }
+
+    function limparFormulario() {
+        document.getElementById("txtVa").value = "";
+        document.getElementById("txtVb").value = "";
+        document.getElementById("resultado").innerHTML= "";
+    }
+
+
+</script>
+
+<body>
+    <form>
+        <div class="container">
+            <h1>Calcule seu IMC</h1>
+            <hr>
+            <div>
+                <label for="txtVa">Peso</label>
+                <input type="number" name="" id="txtVa" value="">
+
+            </div>
+
+            <div>
+
+                <hr> <label for="txtVb">Altura</label>
+                <input type="number" name="" id="txtVb" value="">
+            </div>
+
+            <div>
+                <input type="button" value="Calcular" onclick="calcular();">
+                <input type="button" value="Limpar" onclick="limparFormulario()">
+
+            </div>
+
+            <div id="resultado">
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>
